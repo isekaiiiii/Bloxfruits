@@ -1,7 +1,4 @@
--- discord.gg/25ms
-
-
-shared.LoaderTitle = "đang tải";
+shared.LoaderTitle = "Đang tải";
 shared.LoaderKeyFrames = {
     [1] = {
         1,
@@ -105,7 +102,7 @@ local v8 = CreateObject("TextLabel", {
     Name = "UserName",
     Parent = v6,
     BackgroundTransparency = 1,
-    Text = "Hi bro",
+    Text = "Youtube: Văn Thành IOS",
     Position = UDim2.new(0, 75, 0, 10),
     Size = UDim2.new(0, 200, 0, 50),
     Font = Enum.Font.GothamBold,
@@ -311,12 +308,12 @@ v5:Destroy();
 --         pcall(v422);
 --     end
 -- end);
-local v14 = loadstring(game:HttpGet("https://raw.githubusercontent.com/isekaiiiii/........../refs/heads/main/Source%20md"))();
+local v14 = loadstring(game:HttpGet("https://raw.githubusercontent.com/obfalchx/testfluent/refs/heads/main/FluentTrau"))();
 local v15 = v14:CreateWindow({
     Title = "Ayai_Yume",
-    SubTitle = "Free",
+    SubTitle = "Free Script",
     TabWidth = 160,
-    Theme = "Light",
+    Theme = "Rose",
     Acrylic = false,
     Size = UDim2.fromOffset(500, 320),
     MinimizeKey = Enum.KeyCode.End
@@ -384,6 +381,9 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
     wait();
     game:GetService("VirtualUser"):Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame);
 end);
+
+local a=Instance.new("ScreenGui")local b=Instance.new("ImageButton")local c=Instance.new("UICorner")a.Parent=game.Players.LocalPlayer:WaitForChild("PlayerGui")a.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;b.Parent=a;b.BackgroundColor3=Color3.fromRGB(255,255,255)b.BorderColor3=Color3.fromRGB(0,0,0)b.BorderSizePixel=0;b.Position=UDim2.new(0.103761353,0,0.214939028,0)b.Size=UDim2.new(0,58,0,55)b.Image="rbxassetid://111982589088426"c.Parent=b;local function d()local e=Instance.new('LocalScript',b)e.Parent.MouseButton1Click:Connect(function()game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.End,false,game)end)end;coroutine.wrap(d)()
+
 Sea1 = false;
 Sea2 = false;
 Sea3 = false;
@@ -2677,10 +2677,10 @@ if game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Respawn
     game:GetService("ReplicatedStorage").Effect.Container.Respawn:Destroy();
 end
 v16.Home:AddButton({
-    Title = "Discord",
-    Description = "Giao Lưu",
+    Title = "Youtube",
+    Description = "Tại Đây",
     Callback = function()
-        setclipboard("https://discord.gg/25ms");
+        setclipboard("https://youtube.com/@thanhdzso1");
     end
 });
 _G.FastAttackStrix_Mode = "Super Fast Attack";
@@ -9325,6 +9325,6 @@ spawn(function()
 end);
 v14:Notify({
     Title = "Ayai_Yume",
-    Content = "Tải Xong",
+    Content = "Tải xong r nha :)",
     Duration = 10
 });
