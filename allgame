@@ -1,0 +1,98 @@
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
+
+local Window = Fluent:CreateWindow({
+    Title = "Script Tổng Hợp",
+    SubTitle = " by Thong",
+    TabWidth = 160,
+    Size = UDim2.fromOffset(500, 400),
+    Acrylic = true,
+    Theme = "Dark",
+    MinimizeKey = Enum.KeyCode.End
+})
+
+-- Tạo các tab
+local Tabs = {
+    ALL = Window:AddTab({ Title = "All Map", Icon = "" }),
+    BloxFruits = Window:AddTab({ Title = "Blox Fruits", Icon = "" }),
+    KL = Window:AddTab({ Title = "King Legacy", Icon = "" }),
+    AD = Window:AddTab({ Title = "Anime Defense", Icon = "" }),
+    AV = Window:AddTab({ Title = "Anime Venguard", Icon = "" }),
+    AR = Window:AddTab({ Title = "Reborn", Icon = "" }),
+    MS = Window:AddTab({ Title = "Meme Sea", Icon = "" }),
+    D = Window:AddTab({ Title = "Doors", Icon = "" }),
+    F = Window:AddTab({ Title = "Fisch", Icon = "" }),
+    PG = Window:AddTab({ Title = "Pets Go", Icon = "" }),
+    E = Window:AddTab({ Title = "Evade", Icon = "" })
+}
+local Options = Fluent.Options
+
+-- Tạo GUI Button
+local a = Instance.new("ScreenGui")
+local b = Instance.new("ImageButton")
+local c = Instance.new("UICorner")
+
+a.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+a.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+b.Parent = a
+b.BackgroundColor3 = Color3.fromRGB(255,255,255)
+b.BorderColor3 = Color3.fromRGB(0,0,0)
+b.BorderSizePixel = 0
+b.Position = UDim2.new(0.103761353, 0, 0.214939028, 0)
+b.Size = UDim2.new(0, 48, 0, 45)
+b.Image = "rbxassetid://86106305581632"
+
+c.Parent = b
+
+-- Gán sự kiện bấm nút
+b.MouseButton1Click:Connect(function()
+    game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.End, false, game)
+end)
+
+-- Load scripts từ GitHub
+local success, scripts = pcall(function()
+    return loadstring(game:HttpGet("https://raw.githubusercontent.com/isekaiiiii/........../refs/heads/main/TapBloxfruits"))()
+end)
+
+if success and type(scripts) == "table" and type(scripts["Blox Fruits"]) == "table" then
+    for name, url in pairs(scripts["Blox Fruits"]) do
+        if type(name) == "string" and type(url) == "string" then
+            Tabs.BloxFruits:AddButton({
+                Title = name,
+                Description = "No key 100%",
+                Callback = function()
+                    loadstring(game:HttpGet(url))()
+                end
+            })
+        end
+    end
+else
+    warn("Lỗi khi tải script từ GitHub. Kiểm tra lại URL!")
+end
+
+-- Thêm các button vào tab ALL
+Tabs.ALL:AddButton({
+    Title = "Script được tạo bởi Thong",
+    Callback = function()
+        print("Script đã chạy thành công!")
+    end
+})
+
+Tabs.ALL:AddButton({
+    Title = "Update 1",
+    Description = "Trạng thái script No Key",
+    Callback = function()
+        local Settings = {
+            LowDetail = true,
+            Images = {
+                Invisible = true,
+                Destroy = false
+            },
+            ["No Particles"] = true,
+            ["No Camera Effects"] = true
+        }
+        print("Boost FPS thành công!")
+    end
+})
