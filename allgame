@@ -4,27 +4,21 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 
 local Window = Fluent:CreateWindow({
     Title = "Script Tổng Hợp",
-    SubTitle = " by Thong",
+    SubTitle = " by isekai",
     TabWidth = 160,
-    Size = UDim2.fromOffset(400, 350),
+    Size = UDim2.fromOffset(500, 400),
     Acrylic = true,
     Theme = "Dark",
     MinimizeKey = Enum.KeyCode.End
 })
 
--- Tạo các tab
 local Tabs = {
-    ALL = Window:AddTab({ Title = "All Map", Icon = "" }),
-    BloxFruits = Window:AddTab({ Title = "Blox Fruits", Icon = "" }),
-    KL = Window:AddTab({ Title = "King Legacy", Icon = "" }),
-    AD = Window:AddTab({ Title = "Anime Defense", Icon = "" }),
-    AV = Window:AddTab({ Title = "Anime Venguard", Icon = "" }),
-    AR = Window:AddTab({ Title = "Reborn", Icon = "" }),
-    MS = Window:AddTab({ Title = "Meme Sea", Icon = "" }),
-    D = Window:AddTab({ Title = "Doors", Icon = "" }),
-    F = Window:AddTab({ Title = "Fisch", Icon = "" }),
-    PG = Window:AddTab({ Title = "Pets Go", Icon = "" }),
-    E = Window:AddTab({ Title = "Evade", Icon = "" })
+    ALL = Window:AddTab({ Title = "Thông tin", Icon = "home" }),
+    fram = Window:AddTab({ Title = "Script fram no key", Icon = "swords" }),
+    key1 = Window:AddTab({ Title = "Script fram need key", Icon = "swords" }),
+    kaitun = Window:AddTab({ Title = "Script kaitun", Icon = "swords" }),
+    bouty = Window:AddTab({ Title = "Script săn bouty", Icon = "skull" }), 
+    Premium = Window:AddTab({ Title = "Script Premium", Icon = "shopping-cart" }),
 }
 local Options = Fluent.Options
 
@@ -37,12 +31,12 @@ a.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 a.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 b.Parent = a
-b.BackgroundColor3 = Color3.fromRGB(255,255,255)
-b.BorderColor3 = Color3.fromRGB(0,0,0)
+b.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+b.BorderColor3 = Color3.fromRGB(0, 0, 0)
 b.BorderSizePixel = 0
 b.Position = UDim2.new(0.103761353, 0, 0.214939028, 0)
-b.Size = UDim2.new(0, 48, 0, 45)
-b.Image = "rbxassetid://86106305581632"
+b.Size = UDim2.new(0, 50, 0, 50)
+b.Image = "rbxassetid://73133341512568" 
 
 c.Parent = b
 
@@ -51,48 +45,73 @@ b.MouseButton1Click:Connect(function()
     game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.End, false, game)
 end)
 
--- Load scripts từ GitHub
-local success, scripts = pcall(function()
-    return loadstring(game:HttpGet("https://raw.githubusercontent.com/isekaiiiii/........../refs/heads/main/TapBloxfruits"))()
-end)
+local scripts = {
+    ["fram"] = {
+        ["Master Hub  tiếng việt"] = "https://raw.githubusercontent.com/obfmoonsec/Masterhub/refs/heads/main/obf",  
+        ["Blue X"] = "https://raw.githubusercontent.com/Dev-BlueX/BlueX-Hub/refs/heads/main/Main.lua",    
+        ["Ayai_Yume Hub Tiếng việt"] = "https://raw.githubusercontent.com/isekaiiiii/Bloxfruits/refs/heads/main/Protected_6691530961205123.txt",    
+        ["Redz Hub Tiếng việt "] = "https://raw.githubusercontent.com/realredz/BloxFruits/refs/heads/main/Source.lua",
+        ["Tsuo Hub"] = "https://raw.githubusercontent.com/Tsuo7/TsuoHub/main/Tsuoscripts",
+        ["Speed Hub X"] = "https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua",
+        ["Min Hub hop boss"] = "https://raw.githubusercontent.com/LuaCrack/Min/refs/heads/main/MinHopBoss",
+        ["Min Hub hop sv có kiếm huyền thoại"] = "https://raw.githubusercontent.com/LuaCrack/Min/refs/heads/main/MinHopSword",
+        ["Vxeze Hub hop sv"] = "https://raw.githubusercontent.com/Dex-Bear/VxezeHubHopBoss/refs/heads/main/SkidConCacBaM",
+        ["Alchemy Hub nhặt fruits + hop sv"] = "https://scripts.alchemyhub.xyz",
+        ["Hiru Hub"] = "https://raw.githubusercontent.com/NGUYENVUDUY1/Dev-Hiru/refs/heads/main/HiruHub.lua",
+        ["Min Hub Ui redz"] = "https://raw.githubusercontent.com/LuaCrack/Min/refs/heads/main/MinCE",
+        ["Volcano Hub"] = "https://raw.githubusercontent.com/wpisstestfprg/Volcano/refs/heads/main/VolcanoLocal.lua",
+        ["Xero Hub"] = "https://raw.githubusercontent.com/Xero2409/XeroHub/refs/heads/main/main.lua",
+        ["Quantum Onyx Hub"] = "https://raw.githubusercontent.com/Trustmenotcondom/QTONYX/refs/heads/main/QuantumOnyx.lua",
+        ["Lion Hub nhặt trái + gạt cần "] = "https://raw.githubusercontent.com/NHMdz/BloxFruit/main/Lion%20Hub%20Find%20Fruit.lua",
+        ["Zis Hub Tiếng việt"] = "https://raw.githubusercontent.com/LuaCrack/Zis/refs/heads/main/ZisRb3",
+        ["Alchemy Hub"] = "https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/FPSBooster.lua",
+        ["Andepzai Hub"] = "https://raw.githubusercontent.com/AndepzaiHubBeta/ref/main/AndepzaiNewUpdated.lua",
+        ["W Azure Hub"] = "https://api.luarmor.net/files/v3/loaders/3b2169cf53bc6104dabe8e19562e5cc2.lua",
+        ["Zen Hub"] = "https://raw.githubusercontent.com/ZenScript/zenhub/main/script.lua",        
+    },
+    ["key1"] = { 
+        ["Hoho hub"] = "https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI",
+        ["Strix Hub"] = "https://scriptroblox.onrender.com/strix"
+    },
+    ["kaitun"] = {
+        ["Royx hub"] = "https://api.realaya.xyz/v1/files/l/73mkp0aqyfo4ypy8hvl0nz10lq49fey5.lua",
+        ["Simple hub"] = "https://raw.githubusercontent.com/simple-hubs/contents/refs/heads/main/bloxfruit-kaitan-main.lua"
+    },
+    ["bouty"] = {
+        ["Hoho hub auto bouty cần get key"] = "https://pastefy.app/Pki4kBF8"
+    },
+    ["Premium"] = {
+        ["Maru Hub"] = "https://raw.githubusercontent.com/isekaiiiii/Maru/refs/heads/main/allmap",
+        ["Banana Hub"] = "https://raw.githubusercontent.com/isekaiiiii/Maru/refs/heads/main/allmap"        
+    }
+}
 
-if success and type(scripts) == "table" and type(scripts["Blox Fruits"]) == "table" then
-    for name, url in pairs(scripts["Blox Fruits"]) do
-        if type(name) == "string" and type(url) == "string" then
-            Tabs.BloxFruits:AddButton({
-                Title = name,
-                Description = "No key 100%",
-                Callback = function()
-                    loadstring(game:HttpGet(url))()
-                end
-            })
+for tabName, scriptList in pairs(scripts) do
+    if type(scriptList) == "table" and Tabs[tabName] then
+        for name, url in pairs(scriptList) do
+            if type(name) == "string" and type(url) == "string" then
+                Tabs[tabName]:AddButton({
+                    Title = name,
+                    Description = "Nhấn vào để chạy",
+                    Callback = function()
+                        loadstring(game:HttpGet(url))()
+                    end
+                })
+            end
         end
     end
-else
-    warn("Lỗi khi tải script từ GitHub. Kiểm tra lại URL!")
 end
 
--- Thêm các button vào tab ALL
 Tabs.ALL:AddButton({
-    Title = "Script được tạo bởi Thong",
+    Title = "Discord",
+    Description = "Update các client và script cho ae  mới cho anh em cần",
     Callback = function()
-        print("Script đã chạy thành công!")
+        setclipboard("https://discord.gg/bkg9brba3P");
     end
 })
 
-Tabs.ALL:AddButton({
-    Title = "Update 1",
-    Description = "Trạng thái script No Key",
-    Callback = function()
-        local Settings = {
-            LowDetail = true,
-            Images = {
-                Invisible = true,
-                Destroy = false
-            },
-            ["No Particles"] = true,
-            ["No Camera Effects"] = true
-        }
-        print("Boost FPS thành công!")
-    end
+Fluent:Notify({
+    Title = "Script Tổng hợp",
+    Content = "Version ",
+    Duration = 30
 })
