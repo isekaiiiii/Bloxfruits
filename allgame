@@ -40,7 +40,6 @@ b.Image = "rbxassetid://73133341512568"
 
 c.Parent = b
 
--- Gán sự kiện bấm nút
 b.MouseButton1Click:Connect(function()
     game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.End, false, game)
 end)
@@ -106,12 +105,12 @@ Tabs.ALL:AddButton({
     Title = "Discord",
     Description = "Update các client và script cho ae  mới cho anh em cần",
     Callback = function()
-        setclipboard("https://discord.gg/bkg9brba3P");
+        setclipboard("https://discord.gg/C9b8y43rPu");
     end
 })
 
 Fluent:Notify({
     Title = "Script Tổng hợp",
-    Content = "Version ",
+    Content = "by isekai ☠️",
     Duration = 30
 })
